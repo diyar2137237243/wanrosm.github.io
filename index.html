@@ -1,45 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>War Productions Terminal</title>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Python Website</title>
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: monospace;
-    }
-    .prompt {
-      color: #FF55FF;
-    }
-    #user-input {
-      display: none;
-    }
-    .heading {
-      font-family: "Courier New", Courier, monospace;
-    }
-  </style>
+    <title>3D ASCII Rectangle</title>
+    <style>
+        #container {
+            position: relative;
+            perspective: 500px;
+        }
+        
+        #rectangle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 1s infinite linear;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+    </style>
 </head>
 <body>
-  <script>
-    function handleKeyPress(event) {
-      if (event.keyCode === 13) { // Enter key
-        event.preventDefault();
-        var userInput = document.getElementById("user-input").value;
-        document.getElementById("user-input").value = "";
-        var promptElement = document.getElementById("prompt");
-        promptElement.innerHTML += '<br><span class="prompt">War :[</span>' + userInput + '<span class="prompt"></span>';
-      }
-    }
-  </script>
-  <h1 class="heading">War Productions (COPYRIGHT)</h1>
-  <div id="prompt" class="prompt">War :[</div>
-  <input id="user-input" type="text" onkeypress="handleKeyPress(event)">
+    <div id="container">
+        <pre id="rectangle"></pre>
+    </div>
+    
+    <script>
+        function getRandomCharacter() {
+            const characters = ['/', '-', '|', '\\'];
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            return characters[randomIndex];
+        }
+        
+        function updateRectangle() {
+            const rectangle = document.getElementById('rectangle');
+            let text = '';
+            for (let i = 0; i < 9; i++) {
+                for (let j = 0; j < 18; j++) {
+                    if (i === 0 || i === 8 || j === 0 || j === 17) {
+                        text += getRandomCharacter();
+                    } else {
+                        text += ' ';
+                    }
+                }
+                text += '\n';
+            }
+            rectangle.innerText = text;
+        }
+        
+        setInterval(updateRectangle, 1);
+    </script>
 </body>
-</html>
-
-</head>
 </html>
