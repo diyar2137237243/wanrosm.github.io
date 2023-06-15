@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Python Website</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+    }
+    .prompt {
+      color: #FF55FF;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function handleKeyPress(event) {
+      if (event.keyCode === 13) { // Enter key
+        event.preventDefault();
+        var userInput = document.getElementById("user-input").value;
+        document.getElementById("user-input").value = "";
+        var promptElement = document.getElementById("prompt");
+        promptElement.innerHTML += '<br><span class="prompt">War :[</span>' + userInput + '<span class="prompt"></span>';
+      }
+    }
+  </script>
+  <h1>War Productions (COPYRIGHT)</h1>
+  <div id="prompt" class="prompt">War :[</div>
+  <input id="user-input" type="text" onkeypress="handleKeyPress(event)">
+</body>
+</html>
