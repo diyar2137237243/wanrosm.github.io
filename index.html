@@ -71,13 +71,13 @@
         </div>
     </div>
 
-    <div class="clickable-text" id="picture1" style="top: 30%; left: 20%;" onclick="handleClick(this, 'parentfolder/Folder/1imagine.png')">Picture 1</div>
-    <div class="clickable-text" id="picture2" style="top: 40%; left: 20%;" onclick="handleClick(this, 'parentfolder/Folder/2imagine.png')">Picture 2</div>
-    <div class="clickable-text" id="picture3" style="top: 50%; left: 20%;" onclick="handleClick(this, 'parentfolder/Folder/3imagine.png')">Picture 3</div>
-    <div class="clickable-text" id="picture4" style="top: 60%; left: 20%;" onclick="handleClick(this, 'parentfolder/Folder/4imagine.png')">Picture 4</div>
+    <div class="clickable-text" id="picture1" style="top: 30%; left: 20%;" onclick="handleClick(this, 1)">Picture 1</div>
+    <div class="clickable-text" id="picture2" style="top: 40%; left: 20%;" onclick="handleClick(this, 2)">Picture 2</div>
+    <div class="clickable-text" id="picture3" style="top: 50%; left: 20%;" onclick="handleClick(this, 3)">Picture 3</div>
+    <div class="clickable-text" id="picture4" style="top: 60%; left: 20%;" onclick="handleClick(this, 4)">Picture 4</div>
     
     <script>
-        function handleClick(element, imageUrl) {
+        function handleClick(element, number) {
             element.style.color = 'red';
             element.style.cursor = 'default';
             element.onclick = null;
@@ -87,7 +87,8 @@
                 element.textContent = generateRandomSigns();
             }, 100);
 
-            window.open(imageUrl, '_blank');
+            var fileName = 'Fuck/' + number + '.html';
+            window.open(fileName, '_blank');
         }
 
         function generateRandomSigns() {
@@ -105,16 +106,16 @@
         var picture4 = document.getElementById('picture4');
 
         picture1.onclick = function() {
-            handleClick(this, 'parentfolder/Folder/1imagine.png');
+            handleClick(this, 1);
         };
         picture2.onclick = function() {
-            handleClick(this, 'parentfolder/Folder/2imagine.png');
+            handleClick(this, 2);
         };
         picture3.onclick = function() {
-            handleClick(this, 'parentfolder/Folder/3imagine.png');
+            handleClick(this, 3);
         };
         picture4.onclick = function() {
-            handleClick(this, 'parentfolder/Folder/4imagine.png');
+            handleClick(this, 4);
         };
     </script>
 </body>
