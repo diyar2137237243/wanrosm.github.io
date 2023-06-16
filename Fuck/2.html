@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GET</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .random-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Arial', sans-serif;
+            font-size: 48px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="random-text" id="randomText"></div>
+
+    <script>
+        var textElement = document.getElementById('randomText');
+
+        setInterval(function() {
+            textElement.innerHTML = generateRandomText();
+        }, 1);
+
+        function generateRandomText() {
+            var randomText = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
+
+            for (var i = 0; i < 10; i++) {
+                randomText += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+
+            return randomText;
+        }
+    </script>
+</body>
+</html>
