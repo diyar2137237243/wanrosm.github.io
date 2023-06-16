@@ -11,7 +11,7 @@
         .container {
             position: absolute;
             top: 50%;
-            left: 80px; 
+            left: 80px; /* Adjust the left value as needed */
             transform: translateY(-50%);
             width: 200px;
             height: 200px;
@@ -71,10 +71,10 @@
         </div>
     </div>
 
-    <div class="clickable-text" id="picture1" style="top: 30%; left: 20%;" onclick="handleClick(this, 'https://wanrosm.github.io/parentfolder/Folder/1imagine.png')">Picture 1</div>
-    <div class="clickable-text" id="picture2" style="top: 40%; left: 20%;" onclick="handleClick(this, 'https://wanrosm.github.io/parentfolder/Folder/2imagine.png')">Picture 2</div>
-    <div class="clickable-text" id="picture3" style="top: 50%; left: 20%;" onclick="handleClick(this, 'https://wanrosm.github.io/parentfolder/Folder/3imagine.png')">Picture 3</div>
-    <div class="clickable-text" id="picture4" style="top: 60%; left: 20%;" onclick="handleClick(this, 'https://wanrosm.github.io/parentfolder/Folder/4imagine.png')">Picture 4</div>
+    <div class="clickable-text" id="picture1" style="top: 30%; left: 20%;" onclick="handleClick(this, 'parentfolder/Folder/1imagine.png')">Picture 1</div>
+    <div class="clickable-text" id="picture2" style="top: 40%; left: 20%;" onclick="handleClick(this, 'parentfolder/Folder/2imagine.png')">Picture 2</div>
+    <div class="clickable-text" id="picture3" style="top: 50%; left: 20%;" onclick="handleClick(this, 'parentfolder/Folder/3imagine.png')">Picture 3</div>
+    <div class="clickable-text" id="picture4" style="top: 60%; left: 20%;" onclick="handleClick(this, 'parentfolder/Folder/4imagine.png')">Picture 4</div>
     
     <script>
         function handleClick(element, imageUrl) {
@@ -105,16 +105,16 @@
         var picture4 = document.getElementById('picture4');
 
         picture1.onclick = function() {
-            handleClick(this, 'https://wanrosm.github.io/parentfolder/Folder/1imagine.png');
+            handleClick(this, 'parentfolder/Folder/1imagine.png');
         };
         picture2.onclick = function() {
-            handleClick(this, 'https://wanrosm.github.io/parentfolder/Folder/2imagine.png');
+            handleClick(this, 'parentfolder/Folder/2imagine.png');
         };
         picture3.onclick = function() {
-            handleClick(this, 'https://wanrosm.github.io/parentfolder/Folder/3imagine.png');
+            handleClick(this, 'parentfolder/Folder/3imagine.png');
         };
         picture4.onclick = function() {
-            handleClick(this, 'https://wanrosm.github.io/parentfolder/Folder/4imagine.png');
+            handleClick(this, 'parentfolder/Folder/4imagine.png');
         };
     </script>
 </body>
